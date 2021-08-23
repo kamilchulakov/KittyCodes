@@ -1,4 +1,4 @@
-package com.github.ulyanovskk.kittycodes
+package com.github.ulyanovskk.kittycodes.viewmodels
 
 import androidx.lifecycle.ViewModel
 

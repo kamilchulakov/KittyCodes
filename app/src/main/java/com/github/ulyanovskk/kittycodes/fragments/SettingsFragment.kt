@@ -1,7 +1,8 @@
-package com.github.ulyanovskk.kittycodes
+package com.github.ulyanovskk.kittycodes.fragments
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.github.ulyanovskk.kittycodes.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

@@ -2,11 +2,11 @@ package com.github.ulyanovskk.kittycodes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.core.view.isVisible
-import androidx.preference.Preference
 import androidx.preference.PreferenceManager
+import com.github.ulyanovskk.kittycodes.fragments.InternetCodesFragment
+import com.github.ulyanovskk.kittycodes.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var exitBtn: Button
@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
         setClickListeners()
         restoreData()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container,InternetCodesFragment.newInstance())
+            .replace(R.id.container, InternetCodesFragment.newInstance())
             .commitNow()
     }
 
     private fun setClickListeners() {
         findViewById<Button>(R.id.settingsBtn).setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container,SettingsFragment())
+                .replace(R.id.container, SettingsFragment())
                 .commitNow()
         }
         findViewById<Button>(R.id.searchBtn).setOnClickListener {
