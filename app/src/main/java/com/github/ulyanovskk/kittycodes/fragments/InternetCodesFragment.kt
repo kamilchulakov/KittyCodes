@@ -9,10 +9,6 @@ import android.widget.ImageView
 import coil.load
 import com.github.ulyanovskk.kittycodes.viewmodels.InternetCodesViewModel
 import com.github.ulyanovskk.kittycodes.R
-import com.github.ulyanovskk.kittycodes.network.CatsRepository
-import com.github.ulyanovskk.kittycodes.network.CatsService
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
 
 class InternetCodesFragment : Fragment() {
 
@@ -31,17 +27,13 @@ class InternetCodesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val json =
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://http.cat")
-            .client(OkHttpClient().newBuilder().build())
-            .build()
-        val catsService = retrofit.create(CatsService::class.java)
-
-
-        view.findViewById<ImageView>(R.id.catImage).load(
-            catsService.getCat("1").image
-        )
+        val imageView = requireView().findViewById<ImageView>(R.id.catImage)
+        imageView.load(
+            "https://http.cat/404.jpg"
+        ) {
+            crossfade(true)
+            placeholder(R.drawable.ic_launcher_background)
+        }
     }
 
 }
